@@ -109,15 +109,15 @@ const PROJECTS = [
     short: { es: 'De la llamada a la lista de tareas', en: 'From meeting call to task list' },
     tag:   { es: 'Para project managers', en: 'For project managers' },
     body: {
-      es: 'Una mini app para project managers: a partir de la transcripción de una llamada de Google Meet u otra herramienta, la IA saca en bullet points las tareas que hay que hacer, y se pueden exportar directamente a Jira, Trello o ClickUp. La usamos internamente en el equipo; no llegamos a lanzarla al público.',
-      en: 'A mini app for project managers: from the transcript of a Google Meet (or similar) call, AI pulls out the to-dos as bullet points, ready to export straight to Jira, Trello or ClickUp. We used it internally as a team and never released it publicly.'
+      es: 'Una mini app para project managers: grabas tu voz, pegas un enlace de Loom o la transcripción de una llamada de Google Meet, y la IA la convierte en una lista de tareas en bullet points lista para mandar al gestor de proyectos del equipo. La usamos internamente; no llegamos a lanzarla al público.',
+      en: 'A mini app for project managers: record your voice, paste a Loom link or a Google Meet transcript, and AI turns it into a bullet-point task list ready to send to the team’s project tool. We used it internally and never released it publicly.'
     },
     points: {
-      es: ['Entrada: transcripción de la reunión.', 'Salida: tareas accionables, exportables a la herramienta del equipo.'],
-      en: ['Input: the meeting transcript.', 'Output: actionable tasks, exportable to the team’s tool.']
+      es: ['Entrada: una nota de voz, un vídeo de Loom o la transcripción de una reunión.', 'Salida: tareas accionables, enviadas a Trello; Jira y ClickUp estaban en la hoja de ruta.', 'Espacios de trabajo compartidos para todo el equipo.'],
+      en: ['Input: a voice note, a Loom video or a meeting transcript.', 'Output: actionable tasks sent to Trello, with Jira and ClickUp on the roadmap.', 'Shared workspaces for the whole team.']
     },
     shots: [
-      { src: 'assets/shots/naragram-1.webp', es: 'Naragram', en: 'Naragram' }
+      { src: 'assets/shots/naragram-1.webp', es: 'Pantalla de inicio de Naragram', en: 'Naragram home screen' }
     ]
   },
   {
