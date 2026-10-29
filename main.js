@@ -1,6 +1,6 @@
 // ---------- Contenido ----------
 // Para añadir una captura: guarda la imagen en assets/shots/ con el nombre indicado en `shots`.
-// Si el archivo no existe, la web muestra un marco vacío en su lugar.
+// Si el archivo no existe, la captura no se muestra.
 
 const STATUS = {
   sold:       { es: 'Vendido',          en: 'Acquired' },
@@ -9,31 +9,31 @@ const STATUS = {
   personal:   { es: 'Uso personal',     en: 'Personal use' },
   client:     { es: 'A medida',         en: 'Custom build' },
   internal:   { es: 'Uso interno',      en: 'Internal tool' },
-  closed:     { es: 'Cerrado',          en: 'Shut down' },
-  idea:       { es: 'No lanzado',       en: 'Never launched' }
+  closed:     { es: 'Cerrado',          en: 'Discontinued' },
+  idea:       { es: 'No lanzado',       en: 'Not launched' }
 };
 
 const PROJECTS = [
   {
     id: 'watchlink', name: 'WatchLink.pro', url: 'https://watchlink.pro', status: 'launched', when: '2026',
     stack: ['Claude Code', 'Next.js', 'Supabase', 'Vercel', 'Cloudflare'],
-    short: { es: 'Link en la bio para dealers de relojes', en: 'Link-in-bio for watch dealers' },
-    tag:   { es: 'Construido al 100 % con Claude Code', en: 'Built 100% with Claude Code' },
+    short: { es: 'Plataforma para comerciantes de relojes', en: 'Platform for watch dealers' },
+    tag:   { es: 'Desarrollado íntegramente con Claude Code', en: 'Developed entirely with Claude Code' },
     body: {
-      es: 'Un proyecto personal para poner a prueba el flujo de trabajo con Claude a la hora de construir un producto entero. WatchLink da a cada dealer una página pública con su stock en vivo, consultas por WhatsApp con el reloj ya indicado, gestión interna del inventario con el beneficio de cada venta calculado solo, y una red privada para ver el stock de otros dealers a precio de dealer.',
-      en: 'A personal project to put Claude’s workflow to the test on a whole product. WatchLink gives each dealer a public page with live stock, WhatsApp inquiries that already name the watch, internal inventory with profit per sale worked out automatically, and a private network to browse other dealers’ stock at trade price.'
+      es: 'Proyecto propio concebido para validar un flujo de trabajo completo de desarrollo de producto con Claude. WatchLink ofrece a cada comerciante una página pública con su stock actualizado, consultas por WhatsApp con la referencia del reloj incluida, gestión interna del inventario con cálculo automático del margen de cada venta y una red privada para consultar el stock de otros comerciantes a precio profesional.',
+      en: 'A personal project designed to validate an end-to-end product development workflow with Claude. WatchLink gives each dealer a public page with up-to-date stock, WhatsApp inquiries that include the watch reference, internal inventory management with automatic margin calculation for every sale, and a private network to browse other dealers’ stock at trade prices.'
     },
     points: {
-      es: ['Definí todas las features al principio y las construí una a una, con una spec por feature, probando cada una antes de pasar a la siguiente.',
-           'Unos 6 módulos principales y alrededor de 20 despliegues.',
-           'Lo que aprendí: pedirle una app entera a la IA genera confusión; darle una feature cada vez, con solo el contexto que necesita, mejora mucho el resultado. Las incomodidades de uso no las detecta: el criterio de producto sigue siendo mío.'],
-      en: ['I defined every feature up front and built them one at a time, with a spec per feature, testing each before moving on.',
-           'Around 6 core modules and roughly 20 deployments.',
-           'What I learned: asking AI for a whole app creates confusion; one feature at a time, with only the context it needs, works far better. It doesn’t notice when something is awkward to use, so product judgement is still my job.']
+      es: ['Definición inicial del alcance completo y desarrollo por funcionalidades, cada una con su propia especificación y validada antes de pasar a la siguiente.',
+           'Seis módulos principales y alrededor de veinte despliegues.',
+           'Conclusión principal: trabajar la IA por funcionalidades, aportando solo el contexto necesario, ofrece resultados mucho más fiables que solicitar la aplicación completa. La evaluación de la experiencia de uso sigue requiriendo criterio de producto.'],
+      en: ['Full scope defined up front and built feature by feature, each with its own specification and validated before moving on.',
+           'Six core modules and around twenty deployments.',
+           'Key takeaway: working with AI one feature at a time, providing only the relevant context, produces far more reliable results than requesting the whole application. Assessing the user experience still requires product judgement.']
     },
     shots: [
-      { src: 'assets/shots/watchlink-1.webp', es: 'Landing de WatchLink', en: 'WatchLink landing page' },
-      { src: 'assets/shots/watchlink-2.webp', es: 'Cómo funciona y KPIs del dealer', en: 'How it works and dealer KPIs' }
+      { src: 'assets/shots/watchlink-1.webp', es: 'Página principal de WatchLink', en: 'WatchLink home page' },
+      { src: 'assets/shots/watchlink-2.webp', es: 'Funcionamiento e indicadores del comerciante', en: 'How it works and dealer metrics' }
     ]
   },
   {
@@ -42,66 +42,66 @@ const PROJECTS = [
     short: { es: 'CRM de gestión de flotas', en: 'Fleet management CRM' },
     tag:   { es: '53 empresas · ~1.500 vehículos', en: '53 companies · ~1,500 vehicles' },
     body: {
-      es: 'SaaS de gestión de flotas construido para Acar Gestión de Flota SL. Yo definí y construí el software y la empresa lo explota; a cambio me llevo un canon. Lo diseñé tras sesiones de discovery sobre su operativa diaria real, en lugar de copiar el CRM antiguo que usaban.',
-      en: 'Fleet management SaaS built for Acar Gestión de Flota SL. I defined and built the software; the company runs it and pays me a licence fee. I designed it from discovery sessions on their real day-to-day operations instead of copying the outdated CRM they had.'
+      es: 'SaaS de gestión de flotas desarrollado para Acar Gestión de Flota SL, que explota el software bajo un acuerdo de licencia. Asumí la definición del producto y su desarrollo completo a partir de sesiones de discovery centradas en la operativa diaria de la empresa, en lugar de replicar el CRM que utilizaba anteriormente.',
+      en: 'Fleet management SaaS developed for Acar Gestión de Flota SL, which operates the software under a licensing agreement. I was responsible for product definition and the full build, based on discovery sessions focused on the company’s day-to-day operations rather than replicating its previous CRM.'
     },
     points: {
-      es: ['Vehículos, conductores, gastos, vía-T, ITV, seguros, repostajes, incidencias, multas, asignaciones, impuestos, delegaciones y talleres, con alertas.',
-           'Roles de admin, manager y solo lectura, y la opción de que cada empresa se autogestione.',
-           'IA en producción: un chatbot conectado a ChatGPT para consultar datos sin entrar en la app, y normalización de datos que detecta discrepancias.',
-           'Tras el lanzamiento rehice cómo se recoge la información de los conductores en las incidencias, al ver que no la usaban como esperaba.'],
-      en: ['Vehicles, drivers, expenses, tolls, inspections, insurance, fuel, incidents, fines, assignments, taxes, branches and workshops, with alerts.',
-           'Admin, manager and read-only roles, plus self-service for each company.',
-           'AI in production: a chatbot connected to ChatGPT to query data without opening the app, and data normalisation that flags discrepancies.',
-           'After launch I reworked how driver information is collected for incidents, once I saw they weren’t using it as expected.']
+      es: ['Módulos de vehículos, conductores, gastos, peajes, ITV, seguros, repostajes, incidencias, multas, asignaciones, impuestos, delegaciones y talleres, con sistema de alertas.',
+           'Roles de administrador, gestor y solo lectura, con opción de autogestión para cada empresa cliente.',
+           'IA en producción: asistente conectado a ChatGPT para consultar información sin acceder a la aplicación y normalización de datos con detección de discrepancias.',
+           'Iteración posterior al lanzamiento: rediseño de la recogida de información de conductores en incidencias a partir del uso real.'],
+      en: ['Modules for vehicles, drivers, expenses, tolls, inspections, insurance, fuel, incidents, fines, assignments, taxes, branches and workshops, with an alert system.',
+           'Administrator, manager and read-only roles, with self-service for each client company.',
+           'AI in production: an assistant connected to ChatGPT to query information without opening the application, and data normalisation that flags discrepancies.',
+           'Post-launch iteration: redesigned how driver information is collected for incidents based on actual usage.']
     },
     shots: [
-      { src: 'assets/shots/acarfleet-1.webp', es: 'Flota de una empresa cliente (matrículas, nombres y empresa ficticios)', en: 'A client company’s fleet (fictional plates, names and company)' }
+      { src: 'assets/shots/acarfleet-1.webp', es: 'Flota de una empresa cliente (datos ficticios)', en: 'A client company’s fleet (fictional data)' }
     ]
   },
   {
     id: 'clickbook', name: 'Clickbook.io', status: 'sold', when: '2023 – 2024',
     stack: ['Bubble.io'],
     short: { es: 'Reservas para barberías y peluquerías', en: 'Bookings for barbers and salons' },
-    tag:   { es: 'Vendido tres meses después de lanzarlo', en: 'Sold three months after launch' },
+    tag:   { es: 'Adquirido tres meses después de su lanzamiento', en: 'Acquired three months after launch' },
     body: {
-      es: 'Mi primer producto. Un SaaS de reservas para negocios que trabajan con cita: barberías, peluquerías, estudios. Lo hice todo yo solo, del producto y la base de datos al go-to-market, y tres meses después del lanzamiento lo compró Retail Cloud Inc. (EE.UU.) a través de Acquire.com. La interfaz no es lo más bonito que he hecho; es de cuando estaba aprendiendo.',
-      en: 'My first product. A booking SaaS for appointment-based businesses: barbers, salons, studios. I did everything solo, from product and database to go-to-market, and three months after launch it was bought by Retail Cloud Inc. (US) through Acquire.com. The interface isn’t the prettiest thing I’ve made; it’s from when I was learning.'
+      es: 'Mi primer producto: un SaaS de reservas para negocios que trabajan con cita previa, como barberías, peluquerías y estudios. Me encargué de todas las fases, desde la definición del producto y la base de datos hasta la estrategia de lanzamiento. Tres meses después del lanzamiento, Retail Cloud Inc. (EE.UU.) lo adquirió a través de Acquire.com. El diseño de la interfaz corresponde a una etapa temprana de mi trayectoria.',
+      en: 'My first product: a booking SaaS for appointment-based businesses such as barbers, salons and studios. I handled every stage, from product definition and database design to the go-to-market strategy. Three months after launch, Retail Cloud Inc. (US) acquired it through Acquire.com. The interface design reflects an early stage of my career.'
     },
     points: {
-      es: ['Creación de servicios y alta de trabajadores.',
-           'Gestión del calendario de cada profesional.',
-           'Cobro de fianza al reservar, para reducir las ausencias.',
-           'Ficha de clientes y sistema de recompensas.',
-           'Unos 20 negocios captados por WhatsApp, Instagram y TikTok.'],
-      en: ['Services and staff set-up.',
-           'Calendar management per professional.',
-           'Deposit charged at booking to cut no-shows.',
-           'Client records and a rewards system.',
-           'Around 20 businesses signed up through WhatsApp, Instagram and TikTok.']
+      es: ['Configuración de servicios y gestión del equipo de profesionales.',
+           'Calendario individual para cada profesional.',
+           'Cobro de señal en la reserva para reducir las ausencias.',
+           'Ficha de clientes y programa de fidelización.',
+           'Captación de unos 20 negocios a través de WhatsApp, Instagram y TikTok.'],
+      en: ['Service configuration and staff management.',
+           'Individual calendar for each professional.',
+           'Deposit charged at booking to reduce no-shows.',
+           'Client records and a loyalty programme.',
+           'Around 20 businesses acquired through WhatsApp, Instagram and TikTok.']
     },
     shots: [
-      { src: 'assets/shots/clickbook-1.webp', es: 'Landing de Clickbook', en: 'Clickbook landing page' }
+      { src: 'assets/shots/clickbook-1.webp', es: 'Página principal de Clickbook', en: 'Clickbook home page' }
     ]
   },
   {
     id: 'patrimonio', name: { es: 'Mi patrimonio', en: 'Net worth tracker' }, status: 'personal', when: '2026',
     stack: ['Google Sheets', 'Apps Script', 'IA'],
     short: { es: 'Finanzas personales sobre Google Sheets', en: 'Personal finances on Google Sheets' },
-    tag:   { es: 'Hecha con IA', en: 'Built with AI' },
+    tag:   { es: 'Desarrollada con IA', en: 'Developed with AI' },
     body: {
-      es: 'Una mini app para controlar mis finanzas personales: ingresos, gastos e inversiones, todo en un mismo sitio. Es una web app que lee y escribe en una hoja de Google Sheets; la construí con IA, sin servidor ni base de datos aparte, porque la hoja hace de base de datos. Las cifras de las capturas son inventadas.',
-      en: 'A mini app to keep track of my personal finances: income, spending and investments in one place. It’s a web app that reads and writes to a Google Sheet; I built it with AI, with no server or separate database, because the sheet is the database. The figures in the screenshots are made up.'
+      es: 'Aplicación de uso personal para el control de ingresos, gastos e inversiones. Se trata de una aplicación web que lee y escribe sobre una hoja de Google Sheets, desarrollada con IA y sin servidor ni base de datos adicionales. Las cifras mostradas en la captura son ficticias.',
+      en: 'A personal application to track income, expenses and investments. It is a web app that reads from and writes to a Google Sheet, developed with AI and with no additional server or database. The figures shown in the screenshot are fictional.'
     },
     points: {
-      es: ['Resumen del patrimonio por cuenta, con su evolución mes a mes.',
-           'Movimientos, inversiones con su plusvalía, dividendos y cálculo de impuestos por tramos.',
-           'Objetivos de ahorro con lo que falta y cuánto apartar al mes.',
-           'La hoja de cálculo hace de backend; también se pueden apuntar gastos desde Atajos del iPhone.'],
-      en: ['Net worth by account, with its month-by-month evolution.',
+      es: ['Resumen del patrimonio por cuenta y su evolución mensual.',
+           'Registro de movimientos, inversiones con plusvalías latentes, dividendos y estimación fiscal por tramos.',
+           'Objetivos de ahorro con importe pendiente y aportación mensual recomendada.',
+           'Registro de gastos desde Atajos de iPhone.'],
+      en: ['Net worth by account and its monthly evolution.',
            'Transactions, investments with unrealised gains, dividends and bracket-based tax estimates.',
-           'Savings goals showing what’s left and how much to set aside each month.',
-           'The spreadsheet is the backend; expenses can also be logged from iPhone Shortcuts.']
+           'Savings goals with the remaining amount and recommended monthly contribution.',
+           'Expense logging from iPhone Shortcuts.']
     },
     shots: [
       { src: 'assets/shots/patrimonio-1.webp', es: 'Resumen del patrimonio (datos ficticios)', en: 'Net worth overview (fictional data)' }
@@ -110,69 +110,73 @@ const PROJECTS = [
   {
     id: 'naragram', name: 'Naragram', status: 'internal', when: '',
     stack: ['IA'],
-    short: { es: 'De la llamada a la lista de tareas', en: 'From meeting call to task list' },
-    tag:   { es: 'Para project managers', en: 'For project managers' },
+    short: { es: 'De la reunión a la lista de tareas', en: 'From meetings to task lists' },
+    tag:   { es: 'Herramienta para project managers', en: 'A tool for project managers' },
     body: {
-      es: 'Una mini app para project managers: grabas tu voz, pegas un enlace de Loom o la transcripción de una llamada de Google Meet, y la IA la convierte en una lista de tareas en bullet points lista para mandar al gestor de proyectos del equipo. La usamos internamente; no llegamos a lanzarla al público.',
-      en: 'A mini app for project managers: record your voice, paste a Loom link or a Google Meet transcript, and AI turns it into a bullet-point task list ready to send to the team’s project tool. We used it internally and never released it publicly.'
+      es: 'Aplicación para project managers que convierte una nota de voz, un vídeo de Loom o la transcripción de una reunión de Google Meet en una lista de tareas generada con IA, lista para enviarse a la herramienta de gestión del equipo. Se utilizó de forma interna y no llegó a comercializarse.',
+      en: 'An application for project managers that turns a voice note, a Loom video or a Google Meet transcript into an AI-generated task list, ready to send to the team’s project management tool. It was used internally and was not commercialised.'
     },
     points: {
-      es: ['Entrada: una nota de voz, un vídeo de Loom o la transcripción de una reunión.', 'Salida: tareas accionables, enviadas a Trello; Jira y ClickUp estaban en la hoja de ruta.', 'Espacios de trabajo compartidos para todo el equipo.'],
-      en: ['Input: a voice note, a Loom video or a meeting transcript.', 'Output: actionable tasks sent to Trello, with Jira and ClickUp on the roadmap.', 'Shared workspaces for the whole team.']
+      es: ['Entrada: nota de voz, vídeo de Loom o transcripción de una reunión.',
+           'Salida: tareas accionables exportadas a Trello, con integraciones con Jira y ClickUp planificadas.',
+           'Espacios de trabajo compartidos por equipo.'],
+      en: ['Input: a voice note, a Loom video or a meeting transcript.',
+           'Output: actionable tasks exported to Trello, with Jira and ClickUp integrations planned.',
+           'Shared team workspaces.']
     },
     shots: [
-      { src: 'assets/shots/naragram-1.webp', es: 'Landing de Naragram', en: 'Naragram landing page' },
-      { src: 'assets/shots/naragram-2.webp', es: 'Dentro de la app: grabar o pegar un Loom', en: 'Inside the app: record or paste a Loom link' }
+      { src: 'assets/shots/naragram-1.webp', es: 'Página principal de Naragram', en: 'Naragram home page' },
+      { src: 'assets/shots/naragram-2.webp', es: 'Interior de la aplicación', en: 'Inside the application' }
     ]
   },
   {
     id: 'farmacia', name: { es: 'Turnos de farmacia', en: 'Pharmacy rota' }, status: 'client', when: '',
     stack: ['Lovable'],
-    short: { es: 'Horarios y vacaciones de una farmacia', en: 'Shifts and holidays for a pharmacy' },
+    short: { es: 'Horarios y vacaciones de una farmacia', en: 'Shifts and leave for a pharmacy' },
     tag:   { es: 'Proyecto freelance', en: 'Freelance project' },
     body: {
-      es: 'Una herramienta a medida para el calendario de los empleados de una farmacia, porque ninguna del mercado cubría sus turnos alternos, semanas de descanso y cómputo de horas.',
-      en: 'A custom tool for a pharmacy’s staff calendar, because nothing on the market handled their alternating shifts, rest weeks and hour tracking.'
+      es: 'Herramienta a medida para planificar el calendario del personal de una farmacia. Se desarrolló porque ninguna solución del mercado contemplaba sus turnos alternos, semanas de descanso y cómputo de horas.',
+      en: 'A custom tool to plan a pharmacy’s staff calendar, developed because no solution on the market supported its alternating shifts, rest weeks and hour tracking.'
     },
     points: {
-      es: ['Automatiza las rotaciones semanales.', 'Seguimiento de vacaciones y horas de cada empleado.'],
-      en: ['Automates the weekly rotations.', 'Tracks holidays and hours per employee.']
+      es: ['Automatización de las rotaciones semanales.', 'Seguimiento de vacaciones y horas por empleado.'],
+      en: ['Automated weekly rotations.', 'Holiday and hour tracking per employee.']
     },
     shots: [
-      { src: 'assets/shots/farmacia-1.webp', es: 'Calendario de turnos', en: 'Shift calendar' }
+      { src: 'assets/shots/farmacia-1.webp', es: 'Calendario de turnos (datos ficticios)', en: 'Shift calendar (fictional data)' }
     ]
   },
   {
     id: 'chronoesfera', name: 'ChronoEsfera', status: 'closed', when: '2024',
     stack: ['Bubble.io'],
     short: { es: 'Marketplace de relojes de lujo', en: 'Luxury watch marketplace' },
-    tag:   { es: 'Cerrado por diferencias con un socio', en: 'Closed after a disagreement with a partner' },
+    tag:   { es: 'Proyecto cerrado', en: 'Discontinued project' },
     body: {
-      es: 'Marketplace entre particulares para comprar y vender relojes de lujo, diseñado y desarrollado desde cero. Lo cerramos por discrepancias con un socio.',
-      en: 'A peer-to-peer marketplace for buying and selling luxury watches, designed and built from scratch. We shut it down after a disagreement with a partner.'
+      es: 'Marketplace entre particulares para la compraventa de relojes de lujo, diseñado y desarrollado desde cero. El proyecto se cerró por discrepancias entre los socios.',
+      en: 'A peer-to-peer marketplace for buying and selling luxury watches, designed and built from scratch. The project was discontinued due to disagreements between the partners.'
     },
     points: {
-      es: ['Autenticación, listados dinámicos y mensajería segura entre comprador y vendedor.', 'Pasarelas de pago integradas.'],
+      es: ['Autenticación, anuncios dinámicos y mensajería segura entre comprador y vendedor.', 'Pasarelas de pago integradas.'],
       en: ['Authentication, dynamic listings and secure buyer–seller messaging.', 'Integrated payment gateways.']
     },
     shots: [
-      { src: 'assets/shots/chronoesfera-1.webp', es: 'ChronoEsfera', en: 'ChronoEsfera' }
+      { src: 'assets/shots/chronoesfera-1.webp', es: 'Página principal de ChronoEsfera', en: 'ChronoEsfera home page' }
     ]
   },
   {
     id: 'tutores', name: { es: 'Tutores con IA', en: 'AI tutors' }, status: 'idea', when: '2023',
     stack: [],
-    short: { es: 'Un tutor online para cada niño', en: 'An online tutor for every child' },
-    tag:   { es: 'Planificado con mi jefe en OneMint', en: 'Planned with my manager at OneMint' },
+    short: { es: 'Tutor personalizado para cada alumno', en: 'A personal tutor for every student' },
+    tag:   { es: 'Proyecto planificado durante mi etapa en OneMint', en: 'Planned during my time at OneMint' },
     body: {
-      es: 'Con mi jefe en OneMint empezamos a planificar una app de tutores con IA para que los niños tuvieran en casa alguien que les explicara los conceptos de cada tema y les preparara ejercicios. La idea era que la IA solo usara como contexto el material de cada niño y su colegio, así que llegamos a hablar con alguna editorial sobre los derechos de uso de las versiones digitales de sus libros como base de conocimiento.',
-      en: 'With my manager at OneMint I started planning an AI tutoring app so children could have someone at home to explain each topic and set exercises. The AI would only use each child’s own school material as context, so we talked to publishers about the rights to use digital editions of their textbooks as the knowledge base.'
+      es: 'Junto a mi responsable en OneMint planificamos una aplicación de tutores con IA que explicara a cada alumno los contenidos de su temario y generara ejercicios adaptados. Para que la IA trabajara únicamente con el material de cada alumno y centro educativo, mantuvimos conversaciones con editoriales sobre los derechos de uso de sus libros digitales como base de conocimiento.',
+      en: 'Together with my manager at OneMint, I planned an AI tutoring application that would explain each student’s syllabus and generate tailored exercises. So that the AI would work only with each student’s and school’s own material, we held conversations with publishers about the rights to use their digital textbooks as the knowledge base.'
     },
     points: {
-      es: ['No llegó a formalizarse: los dos empezamos trabajos a tiempo completo que nos absorbían.',
-           'Me quedo con el trabajo de discovery: el reto no era la IA, sino el contenido y sus derechos.'],
-      en: ['It never got formalised: we both started demanding full-time jobs.',
-           'What I keep is the discovery work: the hard part wasn’t the AI, it was the content and its rights.']
+      es: ['El proyecto no llegó a formalizarse al incorporarnos ambos a puestos a tiempo completo.',
+           'El principal aprendizaje del discovery: el reto no residía en la tecnología, sino en el acceso al contenido y sus derechos.'],
+      en: ['The project was not formalised once we both took on full-time roles.',
+           'The main discovery insight: the challenge lay not in the technology but in access to the content and its rights.']
     },
     shots: []
   }
@@ -183,39 +187,39 @@ const UI = {
     'nav.work': 'Productos', 'nav.path': 'Trayectoria', 'nav.contact': 'Contacto',
     'hero.role': 'Martín Souto Parga · Product Manager',
     'hero.title': 'Defino productos y luego los construyo.',
-    'hero.lede': 'Trabajo en producto desde 2022. Estos son los ocho productos que he lanzado por mi cuenta: uno vendido a una empresa de EE.UU., otro en producción para una flota de 1.500 vehículos y alguno que se quedó por el camino.',
-    'idx.title': 'Ocho productos, de la idea a la venta.', 'hero.cta1': 'Ver cada producto', 'hero.cta2': 'Contactar',
+    'hero.lede': 'Trabajo en producto desde 2022. Estos son los ocho productos que he desarrollado de forma independiente, entre ellos uno adquirido por una empresa estadounidense y otro en producción para una flota de 1.500 vehículos.',
+    'idx.title': 'Ocho productos, de la idea a la venta.', 'hero.cta1': 'Ver cada producto', 'hero.cta2': 'Contacto',
     'p.visit': 'Visitar', 'p.built': 'Herramientas', 'p.noshot': 'Captura pendiente', 'p.enlarge': 'Ampliar captura',
-    'path.title': 'Dónde he trabajado',
+    'path.title': 'Experiencia profesional',
     'path.chakor.role': 'Product Manager',
     'path.chakor.when': 'Ago 2024 – Oct 2026 · Ann Arbor, MI (remoto)',
-    'path.chakor.body': 'Discovery de principio a fin con startups y empresas grandes: de la idea del cliente a especificaciones, flujos UX y blueprints de integración. Lideré el programa de plugins para Bubble.io, que pasó de 21 a más de 350 plugins en seis meses, y diseñé para Casting Source un sistema de puntuación de audiciones con IA.',
+    'path.chakor.body': 'Responsable del discovery con startups y grandes empresas, desde la idea del cliente hasta especificaciones, flujos UX y blueprints de integración. Lideré el programa de plugins para Bubble.io, que pasó de 21 a más de 350 plugins en seis meses, y diseñé para Casting Source un sistema de evaluación de audiciones con IA.',
     'path.onemint.role': 'Product Manager y Account Management',
     'path.onemint.when': 'Ene 2022 – Sep 2023 · Seattle, WA (remoto)',
-    'path.onemint.body': 'Plataforma Web3. Set-up y control de calidad de las colecciones NFT del programa Odyssey de Starbucks y de OKX, propuestas de producto para otras industrias y punto de contacto entre clientes y equipo interno.',
-    'path.talk': 'En 2025 di una charla al profesorado del Colegio Compañía de María sobre cómo usar la IA en el aula y cómo gestionar su uso por parte del alumnado.',
-    'contact.title': '¿Hablamos?',
-    'contact.body': 'Busco equipos donde el Product Manager también se mancha las manos.',
-    'foot': 'Hecho con Claude Code y publicado en Vercel.'
+    'path.onemint.body': 'Plataforma Web3. Configuración y control de calidad de las colecciones NFT del programa Odyssey de Starbucks y de OKX, propuestas de producto para distintos sectores y principal punto de contacto entre clientes y equipo interno.',
+    'path.talk': 'En 2025 impartí una charla al profesorado del Colegio Compañía de María sobre el uso de la IA en el aula y su gestión por parte del alumnado.',
+    'contact.title': 'Contacto',
+    'contact.body': 'Busco equipos en los que el Product Manager participe también en la construcción del producto.',
+    'foot': 'Desarrollado con Claude Code y publicado en Vercel.'
   },
   en: {
     'nav.work': 'Products', 'nav.path': 'Experience', 'nav.contact': 'Contact',
     'hero.role': 'Martín Souto Parga · Product Manager',
     'hero.title': 'I define products, then I build them.',
-    'hero.lede': 'I’ve worked in product since 2022. These are the eight products I’ve shipped on my own: one sold to a US company, one in production for a 1,500-vehicle fleet, and a few that didn’t make it.',
-    'idx.title': 'Eight products, from idea to exit.', 'hero.cta1': 'See each product', 'hero.cta2': 'Get in touch',
-    'p.visit': 'Visit', 'p.built': 'Tools', 'p.noshot': 'Screenshot coming', 'p.enlarge': 'Enlarge screenshot',
-    'path.title': 'Where I’ve worked',
+    'hero.lede': 'I have worked in product since 2022. These are the eight products I have developed independently, including one acquired by a US company and one in production for a 1,500-vehicle fleet.',
+    'idx.title': 'Eight products, from idea to exit.', 'hero.cta1': 'See each product', 'hero.cta2': 'Contact',
+    'p.visit': 'Visit', 'p.built': 'Tools', 'p.noshot': 'Screenshot pending', 'p.enlarge': 'Enlarge screenshot',
+    'path.title': 'Professional experience',
     'path.chakor.role': 'Product Manager',
     'path.chakor.when': 'Aug 2024 – Oct 2026 · Ann Arbor, MI (remote)',
-    'path.chakor.body': 'End-to-end discovery with startups and large companies: from the client’s idea to specs, UX flows and integration blueprints. I led the Bubble.io plugin programme, which grew from 21 to over 350 plugins in six months, and designed an AI audition-scoring system for Casting Source.',
+    'path.chakor.body': 'Led discovery with startups and large companies, from the client’s idea to specifications, UX flows and integration blueprints. Led the Bubble.io plugin programme, which grew from 21 to over 350 plugins in six months, and designed an AI audition-scoring system for Casting Source.',
     'path.onemint.role': 'Product Manager & Account Management',
     'path.onemint.when': 'Jan 2022 – Sep 2023 · Seattle, WA (remote)',
-    'path.onemint.body': 'Web3 platform. Set-up and quality control of the NFT collections for Starbucks’ Odyssey programme and OKX, product proposals for other industries, and the main link between clients and the internal team.',
-    'path.talk': 'In 2025 I gave a talk to teachers at Colegio Compañía de María on using AI in the classroom and handling students’ use of it.',
-    'contact.title': 'Let’s talk',
-    'contact.body': 'I’m looking for teams where the Product Manager also gets their hands dirty.',
-    'foot': 'Built with Claude Code and deployed on Vercel.'
+    'path.onemint.body': 'Web3 platform. Set-up and quality control of the NFT collections for Starbucks’ Odyssey programme and OKX, product proposals for several industries, and the main point of contact between clients and the internal team.',
+    'path.talk': 'In 2025 I gave a talk to teachers at Colegio Compañía de María on the use of AI in the classroom and how to manage students’ use of it.',
+    'contact.title': 'Contact',
+    'contact.body': 'I am looking for teams where the Product Manager is also involved in building the product.',
+    'foot': 'Developed with Claude Code and deployed on Vercel.'
   }
 };
 
