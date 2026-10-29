@@ -177,10 +177,10 @@ const PROJECTS = [
 const UI = {
   es: {
     'nav.work': 'Productos', 'nav.path': 'Trayectoria', 'nav.contact': 'Contacto',
-    'hero.role': 'Product Manager · Santiago de Compostela',
+    'hero.role': 'Martín Souto Parga · Product Manager',
     'hero.title': 'Defino productos y luego los construyo.',
     'hero.lede': 'Trabajo en producto desde 2022. Esta es la lista de lo que he lanzado por mi cuenta: uno vendido a una empresa de EE.UU., otro en producción para una flota de 1.500 vehículos, otro construido entero con Claude Code, y alguno que se quedó por el camino.',
-    'idx.product': 'Producto', 'idx.what': 'Qué es', 'idx.when': 'Cuándo', 'idx.status': 'Estado',
+    'idx.title': 'Ocho productos, de la idea a la venta.', 'hero.cta1': 'Ver productos', 'hero.cta2': 'Contactar',
     'p.visit': 'Visitar', 'p.built': 'Herramientas', 'p.noshot': 'Captura pendiente', 'p.enlarge': 'Ampliar captura',
     'path.title': 'Dónde he trabajado',
     'path.chakor.role': 'Product Manager',
@@ -196,10 +196,10 @@ const UI = {
   },
   en: {
     'nav.work': 'Products', 'nav.path': 'Experience', 'nav.contact': 'Contact',
-    'hero.role': 'Product Manager · Santiago de Compostela, Spain',
+    'hero.role': 'Martín Souto Parga · Product Manager',
     'hero.title': 'I define products, then I build them.',
     'hero.lede': 'I’ve worked in product since 2022. This is what I’ve shipped on my own: one sold to a US company, one in production for a 1,500-vehicle fleet, one built entirely with Claude Code, and a few that didn’t make it.',
-    'idx.product': 'Product', 'idx.what': 'What it is', 'idx.when': 'When', 'idx.status': 'Status',
+    'idx.title': 'Eight products, from idea to exit.', 'hero.cta1': 'See products', 'hero.cta2': 'Get in touch',
     'p.visit': 'Visit', 'p.built': 'Tools', 'p.noshot': 'Screenshot coming', 'p.enlarge': 'Enlarge screenshot',
     'path.title': 'Where I’ve worked',
     'path.chakor.role': 'Product Manager',
@@ -230,41 +230,39 @@ function render(lang) {
 
   $('#index-list').innerHTML = PROJECTS.map(p => `
     <li><a href="#${p.id}">
+      <span class="i-status s-${p.status}">${STATUS[p.status][lang]}</span>
       <span class="i-name">${esc(t(p.name, lang))}</span>
       <span class="i-what">${esc(t(p.short, lang))}</span>
-      <span class="i-when">${esc(p.when)}</span>
-      <span class="stamp s-${p.status}">${STATUS[p.status][lang]}</span>
     </a></li>`).join('');
 
-  $('#projects').innerHTML = PROJECTS.map(p => {
-    const shots = p.shots.length ? `
-      <div class="shots ${p.shots.length > 1 ? 'two' : ''}">
-        ${p.shots.map(s => `
-          <figure class="shot">
-            <div class="frame"><span></span><span></span><span></span></div>
-            <button type="button" class="shot-btn" aria-label="${UI[lang]['p.enlarge']}: ${esc(t(s, lang) || s[lang])}">
-              <img src="${s.src}" alt="${esc(s[lang])}" loading="lazy" onerror="this.closest('.shot').classList.add('empty')">
-              <span class="empty-note">${UI[lang]['p.noshot']}</span>
-            </button>
-            <figcaption>${esc(s[lang])}</figcaption>
-          </figure>`).join('')}
-      </div>` : `<div class="no-shots"><p>${esc(p.tag[lang])}</p></div>`;
+  $('#projects').innerHTML = PROJECTS.map((p, n) => {
+    const shot = s => `
+      <figure class="shot">
+        <button type="button" class="shot-btn" aria-label="${UI[lang]['p.enlarge']}: ${esc(s[lang])}">
+          <img src="${s.src}" alt="${esc(s[lang])}" loading="lazy" onerror="this.closest('.shot').remove()">
+        </button>
+        <figcaption>${esc(s[lang])}</figcaption>
+      </figure>`;
+    const [main, ...rest] = p.shots;
     return `
-    <article class="project" id="${p.id}">
-      <div class="p-head">
-        <span class="stamp s-${p.status}">${STATUS[p.status][lang]}</span>
-        <h2>${esc(t(p.name, lang))}</h2>
-        <p class="p-tag">${esc(p.tag[lang])}</p>
-      </div>
-      <div class="p-body">
-        <p class="p-desc">${esc(p.body[lang])}</p>
-        <ul class="p-points">${p.points[lang].map(x => `<li>${esc(x)}</li>`).join('')}</ul>
-        <div class="p-meta">
-          ${p.stack.length ? `<p class="stack"><span>${UI[lang]['p.built']}:</span> ${p.stack.map(esc).join(', ')}</p>` : ''}
-          ${p.url ? `<a class="visit" href="${p.url}" target="_blank" rel="noopener">${UI[lang]['p.visit']} ${esc(p.url.replace('https://', ''))}</a>` : ''}
+    <article class="project ${n % 2 ? 'alt' : ''}" id="${p.id}">
+      <div class="wrap">
+        <header class="p-head">
+          <p class="p-status s-${p.status}">${STATUS[p.status][lang]}${p.when ? ` · ${esc(p.when)}` : ''}</p>
+          <h2>${esc(t(p.name, lang))}</h2>
+          <p class="p-tag">${esc(p.tag[lang])}</p>
+          ${p.url ? `<a class="link" href="${p.url}" target="_blank" rel="noopener">${UI[lang]['p.visit']} ${esc(p.url.replace('https://', ''))} ›</a>` : ''}
+        </header>
+        ${main ? `<div class="hero-shot">${shot(main)}</div>` : ''}
+        ${rest.length ? `<div class="more-shots">${rest.map(shot).join('')}</div>` : ''}
+        <div class="p-body">
+          <p class="p-desc">${esc(p.body[lang])}</p>
+          <div>
+            <ul class="p-points">${p.points[lang].map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+            ${p.stack.length ? `<p class="stack">${UI[lang]['p.built']}: ${p.stack.map(esc).join(', ')}</p>` : ''}
+          </div>
         </div>
       </div>
-      ${shots}
     </article>`;
   }).join('');
 }
@@ -287,7 +285,7 @@ $('#lang').addEventListener('click', () => {
 const lb = $('#lightbox');
 document.addEventListener('click', e => {
   const btn = e.target.closest('.shot-btn');
-  if (!btn || btn.closest('.shot').classList.contains('empty')) return;
+  if (!btn) return;
   const img = btn.querySelector('img');
   $('#lb-img').src = img.src; $('#lb-img').alt = img.alt;
   lb.showModal();
