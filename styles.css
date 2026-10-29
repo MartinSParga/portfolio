@@ -101,7 +101,7 @@ h1 {
 .s-launched   { color: #7A5A00; background: #FCF1D2; border-color: var(--amber); }
 .s-personal   { color: var(--sky); background: #E4EEF4; }
 .s-client     { color: var(--sky); background: #E4EEF4; }
-.s-prototype  { color: var(--ink-soft); background: #EEF1F1; }
+.s-internal  { color: var(--ink-soft); background: #EEF1F1; }
 .s-closed     { color: var(--rust); background: #F6E7E2; }
 .s-idea       { color: var(--ink-soft); background: transparent; border-style: dashed; }
 

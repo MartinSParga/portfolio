@@ -8,7 +8,7 @@ const STATUS = {
   launched:   { es: 'Lanzado',          en: 'Launched' },
   personal:   { es: 'Uso personal',     en: 'Personal use' },
   client:     { es: 'A medida',         en: 'Custom build' },
-  prototype:  { es: 'Mini app',         en: 'Mini app' },
+  internal:   { es: 'Uso interno',      en: 'Internal tool' },
   closed:     { es: 'Cerrado',          en: 'Shut down' },
   idea:       { es: 'No lanzado',       en: 'Never launched' }
 };
@@ -56,8 +56,7 @@ const PROJECTS = [
            'After launch I reworked how driver information is collected for incidents, once I saw they weren’t using it as expected.']
     },
     shots: [
-      { src: 'assets/shots/acarfleet-1.webp', es: 'Panel de empresas (datos de demo)', en: 'Companies dashboard (demo data)' },
-      { src: 'assets/shots/acarfleet-2.webp', es: 'Ficha de vehículo', en: 'Vehicle record' }
+      { src: 'assets/shots/acarfleet-1.webp', es: 'Panel de empresas (nombres y datos ficticios)', en: 'Companies dashboard (fictional names and data)' }
     ]
   },
   {
@@ -82,18 +81,17 @@ const PROJECTS = [
            'Around 20 businesses signed up through WhatsApp, Instagram and TikTok.']
     },
     shots: [
-      { src: 'assets/shots/clickbook-1.webp', es: 'Landing de Clickbook', en: 'Clickbook landing page' },
-      { src: 'assets/shots/clickbook-2.webp', es: 'Calendario de reservas', en: 'Booking calendar' }
+      { src: 'assets/shots/clickbook-1.webp', es: 'Landing de Clickbook', en: 'Clickbook landing page' }
     ]
   },
   {
-    id: 'patrimonio', name: { es: 'Mi patrimonio', en: 'Net worth tracker' }, status: 'personal', when: '',
+    id: 'patrimonio', name: { es: 'Mi patrimonio', en: 'Net worth tracker' }, status: 'personal', when: '2026',
     stack: ['Google Sheets', 'Apps Script', 'IA'],
-    short: { es: 'Web app personal sobre Google Sheets', en: 'Personal web app on Google Sheets' },
+    short: { es: 'Finanzas personales sobre Google Sheets', en: 'Personal finances on Google Sheets' },
     tag:   { es: 'Hecha con IA', en: 'Built with AI' },
     body: {
-      es: 'Una mini app para mi uso personal: una web app que lee de una hoja de Google Sheets y me enseña en un solo vistazo cómo está repartido mi patrimonio. La construí con IA, sin servidor ni base de datos aparte: la hoja es la base de datos. Las cifras de las capturas son inventadas.',
-      en: 'A mini app for my own use: a web app that reads from a Google Sheet and shows at a glance how my net worth is spread. I built it with AI, with no server or separate database: the sheet is the database. The figures in the screenshots are made up.'
+      es: 'Una mini app para controlar mis finanzas personales: ingresos, gastos e inversiones, todo en un mismo sitio. Es una web app que lee y escribe en una hoja de Google Sheets; la construí con IA, sin servidor ni base de datos aparte, porque la hoja hace de base de datos. Las cifras de las capturas son inventadas.',
+      en: 'A mini app to keep track of my personal finances: income, spending and investments in one place. It’s a web app that reads and writes to a Google Sheet; I built it with AI, with no server or separate database, because the sheet is the database. The figures in the screenshots are made up.'
     },
     points: {
       es: ['La hoja de cálculo hace de backend y la web app de interfaz.',
@@ -106,13 +104,13 @@ const PROJECTS = [
     ]
   },
   {
-    id: 'naragram', name: 'Naragram', status: 'prototype', when: '',
+    id: 'naragram', name: 'Naragram', status: 'internal', when: '',
     stack: ['IA'],
     short: { es: 'De la llamada a la lista de tareas', en: 'From meeting call to task list' },
     tag:   { es: 'Para project managers', en: 'For project managers' },
     body: {
-      es: 'Una mini app para project managers: a partir de la transcripción de una llamada de Google Meet u otra herramienta, la IA saca en bullet points las tareas que hay que hacer, y se pueden exportar directamente a Jira, Trello o ClickUp.',
-      en: 'A mini app for project managers: from the transcript of a Google Meet (or similar) call, AI pulls out the to-dos as bullet points, ready to export straight to Jira, Trello or ClickUp.'
+      es: 'Una mini app para project managers: a partir de la transcripción de una llamada de Google Meet u otra herramienta, la IA saca en bullet points las tareas que hay que hacer, y se pueden exportar directamente a Jira, Trello o ClickUp. La usamos internamente en el equipo; no llegamos a lanzarla al público.',
+      en: 'A mini app for project managers: from the transcript of a Google Meet (or similar) call, AI pulls out the to-dos as bullet points, ready to export straight to Jira, Trello or ClickUp. We used it internally as a team and never released it publicly.'
     },
     points: {
       es: ['Entrada: transcripción de la reunión.', 'Salida: tareas accionables, exportables a la herramienta del equipo.'],
@@ -124,7 +122,7 @@ const PROJECTS = [
   },
   {
     id: 'farmacia', name: { es: 'Turnos de farmacia', en: 'Pharmacy rota' }, status: 'client', when: '',
-    stack: [],
+    stack: ['Lovable'],
     short: { es: 'Horarios y vacaciones de una farmacia', en: 'Shifts and holidays for a pharmacy' },
     tag:   { es: 'Proyecto freelance', en: 'Freelance project' },
     body: {
@@ -145,8 +143,8 @@ const PROJECTS = [
     short: { es: 'Marketplace de relojes de lujo', en: 'Luxury watch marketplace' },
     tag:   { es: 'Cerrado por diferencias con un socio', en: 'Closed after a disagreement with a partner' },
     body: {
-      es: 'Marketplace entre particulares para comprar y vender relojes de lujo, diseñado y desarrollado desde cero. Lo cerramos por discrepancias con un socio, pero fue el origen de mi interés por el mundo de los dealers que acabó en WatchLink.',
-      en: 'A peer-to-peer marketplace for buying and selling luxury watches, designed and built from scratch. We shut it down after a disagreement with a partner, but it’s where my interest in watch dealers started, which later became WatchLink.'
+      es: 'Marketplace entre particulares para comprar y vender relojes de lujo, diseñado y desarrollado desde cero. Lo cerramos por discrepancias con un socio.',
+      en: 'A peer-to-peer marketplace for buying and selling luxury watches, designed and built from scratch. We shut it down after a disagreement with a partner.'
     },
     points: {
       es: ['Autenticación, listados dinámicos y mensajería segura entre comprador y vendedor.', 'Pasarelas de pago integradas.'],
