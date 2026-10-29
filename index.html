@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Martín Souto Parga · Product Manager</title>
+<meta name="description" content="Portfolio de Martín Souto Parga, Product Manager que construye lo que define: productos lanzados, vendidos y en producción.">
+<meta property="og:title" content="Martín Souto Parga · Product Manager">
+<meta property="og:description" content="Productos que he definido y construido: lanzados, vendidos, en producción y algunos que se quedaron por el camino.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23243B4A'/><text x='16' y='22' font-family='Arial' font-weight='700' font-size='15' text-anchor='middle' fill='%23F2C14E'>MS</text></svg>">
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="#top">Martín Souto</a>
+  <nav>
+    <a href="#productos" data-i18n="nav.work">Productos</a>
+    <a href="#trayectoria" data-i18n="nav.path">Trayectoria</a>
+    <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    <button class="lang" id="lang" type="button" aria-label="Cambiar idioma / Change language">EN</button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="role" data-i18n="hero.role">Product Manager · Santiago de Compostela</p>
+    <h1 data-i18n="hero.title">Defino productos y luego los construyo.</h1>
+    <p class="lede" data-i18n="hero.lede">Trabajo en producto desde 2022. Esta es la lista de lo que he lanzado por mi cuenta: uno vendido a una empresa de EE.UU., otro en producción para una flota de 1.500 vehículos, otro construido entero con Claude Code, y alguno que se quedó por el camino.</p>
+
+    <div class="index" id="productos">
+      <div class="index-head" aria-hidden="true">
+        <span data-i18n="idx.product">Producto</span>
+        <span data-i18n="idx.what">Qué es</span>
+        <span data-i18n="idx.when">Cuándo</span>
+        <span data-i18n="idx.status">Estado</span>
+      </div>
+      <ol class="index-list" id="index-list"></ol>
+    </div>
+  </section>
+
+  <section class="projects" id="projects"></section>
+
+  <section class="path" id="trayectoria">
+    <h2 data-i18n="path.title">Dónde he trabajado</h2>
+    <div class="jobs">
+      <article class="job">
+        <h3>Chakor <span data-i18n="path.chakor.role">Product Manager</span></h3>
+        <p class="when" data-i18n="path.chakor.when">Ago 2024 – Oct 2026 · Ann Arbor, MI (remoto)</p>
+        <p data-i18n="path.chakor.body">Discovery de principio a fin con startups y empresas grandes: de la idea del cliente a especificaciones, flujos UX y blueprints de integración. Lideré el programa de plugins para Bubble.io, que pasó de 21 a más de 350 plugins en seis meses, y diseñé para Casting Source un sistema de puntuación de audiciones con IA.</p>
+      </article>
+      <article class="job">
+        <h3>OneMint <span data-i18n="path.onemint.role">Product Manager y Account Management</span></h3>
+        <p class="when" data-i18n="path.onemint.when">Ene 2022 – Sep 2023 · Seattle, WA (remoto)</p>
+        <p data-i18n="path.onemint.body">Plataforma Web3. Set-up y control de calidad de las colecciones NFT del programa Odyssey de Starbucks y de OKX, propuestas de producto para otras industrias y punto de contacto entre clientes y equipo interno.</p>
+      </article>
+    </div>
+    <p class="talk" data-i18n="path.talk">En 2025 di una charla al profesorado del Colegio Compañía de María sobre cómo usar la IA en el aula y cómo gestionar su uso por parte del alumnado.</p>
+  </section>
+
+  <section class="contact" id="contacto">
+    <h2 data-i18n="contact.title">¿Hablamos?</h2>
+    <p data-i18n="contact.body">Busco equipos donde el Product Manager también se mancha las manos.</p>
+    <div class="contact-links">
+      <a class="btn" href="mailto:soutomartin21@gmail.com">soutomartin21@gmail.com</a>
+      <a class="btn ghost" href="https://linkedin.com/in/martin-soutoparga" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p data-i18n="foot">Hecho con Claude Code y publicado en Vercel.</p>
+</footer>
+
+<dialog class="lightbox" id="lightbox">
+  <button type="button" class="lb-close" id="lb-close" aria-label="Cerrar">×</button>
+  <img id="lb-img" alt="">
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>
