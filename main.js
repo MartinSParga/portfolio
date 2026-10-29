@@ -56,7 +56,7 @@ const PROJECTS = [
            'After launch I reworked how driver information is collected for incidents, once I saw they weren’t using it as expected.']
     },
     shots: [
-      { src: 'assets/shots/acarfleet-1.webp', es: 'Panel de empresas (nombres y datos ficticios)', en: 'Companies dashboard (fictional names and data)' }
+      { src: 'assets/shots/acarfleet-1.webp', es: 'Flota de una empresa cliente (matrículas, nombres y empresa ficticios)', en: 'A client company’s fleet (fictional plates, names and company)' }
     ]
   },
   {
@@ -94,13 +94,17 @@ const PROJECTS = [
       en: 'A mini app to keep track of my personal finances: income, spending and investments in one place. It’s a web app that reads and writes to a Google Sheet; I built it with AI, with no server or separate database, because the sheet is the database. The figures in the screenshots are made up.'
     },
     points: {
-      es: ['La hoja de cálculo hace de backend y la web app de interfaz.',
-           'Ejemplo de cómo resolver un problema propio en una tarde con IA, en lugar de pagar otra suscripción.'],
-      en: ['The spreadsheet is the backend; the web app is the interface.',
-           'An example of solving my own problem in an afternoon with AI instead of paying for another subscription.']
+      es: ['Resumen del patrimonio por cuenta, con su evolución mes a mes.',
+           'Movimientos, inversiones con su plusvalía, dividendos y cálculo de impuestos por tramos.',
+           'Objetivos de ahorro con lo que falta y cuánto apartar al mes.',
+           'La hoja de cálculo hace de backend; también se pueden apuntar gastos desde Atajos del iPhone.'],
+      en: ['Net worth by account, with its month-by-month evolution.',
+           'Transactions, investments with unrealised gains, dividends and bracket-based tax estimates.',
+           'Savings goals showing what’s left and how much to set aside each month.',
+           'The spreadsheet is the backend; expenses can also be logged from iPhone Shortcuts.']
     },
     shots: [
-      { src: 'assets/shots/patrimonio-1.webp', es: 'Vista general (datos ficticios)', en: 'Overview (fictional data)' }
+      { src: 'assets/shots/patrimonio-1.webp', es: 'Resumen del patrimonio (datos ficticios)', en: 'Net worth overview (fictional data)' }
     ]
   },
   {
