@@ -117,7 +117,8 @@ const PROJECTS = [
       en: ['Input: a voice note, a Loom video or a meeting transcript.', 'Output: actionable tasks sent to Trello, with Jira and ClickUp on the roadmap.', 'Shared workspaces for the whole team.']
     },
     shots: [
-      { src: 'assets/shots/naragram-1.webp', es: 'Pantalla de inicio de Naragram', en: 'Naragram home screen' }
+      { src: 'assets/shots/naragram-1.webp', es: 'Landing de Naragram', en: 'Naragram landing page' },
+      { src: 'assets/shots/naragram-2.webp', es: 'Dentro de la app: grabar o pegar un Loom', en: 'Inside the app: record or paste a Loom link' }
     ]
   },
   {
